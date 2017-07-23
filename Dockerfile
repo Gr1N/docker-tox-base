@@ -1,4 +1,4 @@
-FROM themattrix/pyenv
+FROM gr1n/docker-pyenv:latest
 
 MAINTAINER Nikita Grishko <gr1n@protonmail.com>
 
