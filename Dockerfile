@@ -1,6 +1,6 @@
 FROM themattrix/pyenv
 
-MAINTAINER Matthew Tardiff <mattrix@gmail.com>
+MAINTAINER Nikita Grishko <gr1n@protonmail.com>
 
 RUN groupadd -r tox --gid=999 && \
     useradd -m -r -g tox --uid=999 tox
@@ -21,9 +21,8 @@ RUN set -x && \
     gosu nobody true && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pyenv local 3.6.0 && \
-    python -m pip install -U pip && \
-    python -m pip install tox==2.3.2 && \
+RUN pyenv local 3.6.2 && \
+    python -m pip install -U pip tox && \
     pyenv local --unset && \
     pyenv rehash
 
